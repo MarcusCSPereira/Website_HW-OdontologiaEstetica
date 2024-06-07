@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -23,14 +24,43 @@ i {
   color: #fff;
 }
 
+@keyframes translateY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
 .header-icons {
   display: flex;
   gap: 14px;
 }
-
+.header-icons a {
+  color: inherit; /* Mantém a cor original dos ícones */
+  transition: color 0.3s ease;
+}
 .header-icons a:hover i {
   animation: translateY 0.8s infinite alternate;
-  color: #d34040;
+  /* A cor será definida individualmente abaixo */
+}
+.header-icons a:nth-child(1):hover i {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); /* Gradiente do Instagram */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-icons a:nth-child(2):hover i {
+  background: linear-gradient(45deg, #69C9D0, #EE1D52, #69C9D0); /* Gradiente do TikTok */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-icons a:nth-child(3):hover i {
+  background: linear-gradient(45deg, #1877F2, #4b86e8); /* Gradiente do Facebook */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes translateY {
@@ -100,7 +130,7 @@ i {
   content: "";
   display: block;
   position: absolute;
-  background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../assets/bg.jpeg");
+  background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url("../assets/bg.png");
   left: 0;
   top: 0;
   width: 100%;
@@ -114,12 +144,12 @@ i {
 
 .hero {
   color: #fff;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 14px;
+  justify-content: flex-end;
+  padding: 0 14px 200px 14px;
 }
 .hero h1 {
   text-align: center;
@@ -156,7 +186,8 @@ i {
 }
 @media screen and (max-width: 768px) {
   .hero {
-    min-height: 60vh;
+    min-height: 30vh;
+    padding: 14px;
   }
   .hero h1 {
     font-size: 34px;
@@ -168,6 +199,9 @@ i {
   }
 }
 @media screen and (max-width: 480px) {
+  .hero {
+    padding: 14px;
+  }
   .hero h1 {
     font-size: 24px;
   }
@@ -313,10 +347,31 @@ i {
   gap: 22px;
   color: #fff;
 }
-
+.footer-icons a {
+  color: inherit; /* Mantém a cor original dos ícones */
+  transition: color 0.3s ease;
+}
 .footer-icons a:hover i {
   animation: translateY 0.8s infinite alternate;
-  color: #d34040;
+  /* A cor será definida individualmente abaixo */
+}
+.footer-icons a:nth-child(1):hover i {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4); /* Gradiente do Instagram */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer-icons a:nth-child(2):hover i {
+  background: linear-gradient(45deg, #69C9D0, #EE1D52, #69C9D0); /* Gradiente do TikTok */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer-icons a:nth-child(3):hover i {
+  background: linear-gradient(45deg, #1877F2, #4b86e8); /* Gradiente do Facebook */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer .copyright {

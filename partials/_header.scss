@@ -1,45 +1,77 @@
-header{
+header {
   width: 100%;
 }
 
-.header-content{
+.header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.header-logo{
+.header-logo {
   max-width: 160px;
 }
 
-i{
+i {
   color: $white-normal;
 }
 
-.header-icons{
+@keyframes translateY {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.header-icons {
   display: flex;
   gap: 14px;
-}
+  a {
+    color: inherit; /* Mantém a cor original dos ícones */
+    transition: color 0.3s ease;
 
-.header-icons a:hover{
-  i{
-    animation: translateY 0.8s infinite alternate;
-    color: $red-light;
+    &:hover {
+      i {
+        animation: translateY 0.8s infinite alternate;
+        /* A cor será definida individualmente abaixo */
+      }
+    }
+
+    &:nth-child(1):hover i {
+      background: $instagram-gradient; /* Gradiente do Instagram */
+      -webkit-background-clip: text;
+      background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(2):hover i {
+      background: $tiktok-gradient; /* Gradiente do TikTok */
+      -webkit-background-clip: text;
+      background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(3):hover i {
+      background: $facebook-gradient; /* Gradiente do Facebook */
+      -webkit-background-clip: text;
+      background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
-
-
 
 @keyframes translateY {
-  from{
+  from {
     transform: translateY(0) scale(1);
   }
-  to{
+  to {
     transform: translateY(-8px) scale(1.1);
   }
 }
 
-.header-button{
+.header-button {
   margin-right: 20px;
   border: 1px solid $white-normal;
   padding: 8px 24px;
@@ -53,12 +85,12 @@ i{
   margin-right: 0;
 }
 
-.header-button:hover{
+.header-button:hover {
   border: 1px solid $red-light;
   background-color: $red-light;
 }
 
-.header-logo{
+.header-logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,29 +98,24 @@ i{
 }
 
 @media screen and (max-width: 768px) {
-
-  .header-content{
+  .header-content {
     width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    i{
+    i {
       margin-top: 16px;
       font-size: 34px;
     }
   }
 
-
-  .header-logo{
+  .header-logo {
     width: 100px;
     margin-top: 46px;
   }
 
-  .header-button{
+  .header-button {
     display: none;
   }
-  
-  
-  
 }

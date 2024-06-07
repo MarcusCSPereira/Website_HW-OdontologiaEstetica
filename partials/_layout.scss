@@ -12,7 +12,7 @@
   content: '';
   display: block;
   position: absolute;
-  background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url('../assets/bg.jpeg');
+  background-image: linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url('../assets/bg.png');
   left: 0;
   top: 0;
   width: 100%;
@@ -26,12 +26,13 @@
 
 .hero{
   color: $white-normal;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
+
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 14px;
+  justify-content: flex-end;
+  padding: 0 14px 200px 14px;
 
   h1{
     text-align: center;
@@ -71,8 +72,8 @@
 
 @media screen and (max-width: 768px) {
   .hero{
-    min-height: 60vh;
-
+    min-height: 30vh;
+    padding: 14px;
     h1{
       font-size: 34px;
       padding: 0 14px;
@@ -88,6 +89,7 @@
 
 @media screen and (max-width: 480px) {
   .hero{
+    padding: 14px;
     h1{
       font-size: 24px;
     }
@@ -247,16 +249,41 @@
   }
 }
 
-.footer-icons{
+.footer-icons {
   display: flex;
   gap: 22px;
   color: $white-normal;
-}
+  a {
+    color: inherit; /* Mantém a cor original dos ícones */
+    transition: color 0.3s ease;
 
-.footer-icons a:hover{
-  i{
-    animation: translateY 0.8s infinite alternate;
-    color: $red-light;
+    &:hover {
+      i {
+        animation: translateY 0.8s infinite alternate;
+        /* A cor será definida individualmente abaixo */
+      }
+    }
+
+    &:nth-child(1):hover i {
+      background: $instagram-gradient; /* Gradiente do Instagram */
+      -webkit-background-clip: text;
+      background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(2):hover i {
+      background: $tiktok-gradient; /* Gradiente do TikTok */
+      -webkit-background-clip: text;
+      background-clip: text; 
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(3):hover i {
+      background: $facebook-gradient; /* Gradiente do Facebook */
+      -webkit-background-clip: text;
+      background-clip: text; // Add the default 'background-clip' property
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
 
